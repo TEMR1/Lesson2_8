@@ -1,10 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        Currency firstCurrency = new Currency("UAH", 2);
-        Currency secondCurrency = new Currency("USD", 5);
+        AccountCreateManager accountCreateManager = new AccountCreateManager();
 
-        User firstUser = new User("Danylo", "Shpak", "danylo.shpak.2009@gmail.com");
-        User secondUser = new User("Petro", "Koval", "petro.koval.2010@gmail.com");
+        User firstUser = accountCreateManager.createUser("Danylo","Shpak","danylo.shpak.2009@gmail.com");
+        User secondUser = accountCreateManager.createUser("Petro", "Koval", "petro.koval.2010@gmail.com");
+
+        Currency firstCurrency = accountCreateManager.createCurrency("UAH",2);
+        Currency secondCurrency = accountCreateManager.createCurrency("USD",5);
 
         BankAccount firstAccount = new BankAccount(firstUser,firstCurrency,1000);
         BankAccount secondAccount = new BankAccount(secondUser,secondCurrency,10000);

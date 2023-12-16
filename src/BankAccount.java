@@ -1,12 +1,11 @@
 public class BankAccount {
-    private User user;
+    private UserType user;
     private Currency currency;
 
     private double interestRate;
     private double creditLimit;
     private double balance;
-
-    BankAccount(User user, Currency currency, double balance){
+    public BankAccount(UserType user, Currency currency, double balance){
         this.user = user;
         this.currency = currency;
         this.balance = balance;
@@ -52,7 +51,7 @@ public class BankAccount {
 
 //-----------------------------------------------INFORMATION--------------------------------------------------------
     public void balanceInfo(){
-        System.out.println("Власник акаунта: " + user.getName() + " " + user.getSurName() + ". Електронна пошта: " + user.getEmail());
+        System.out.println("Власник акаунта: " + user.getUserInfo());
         System.out.println("Баланс: " + balance + " " +  currency.getCode());
     }
 }

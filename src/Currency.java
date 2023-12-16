@@ -2,7 +2,7 @@ public class Currency {
     private String code;
     private double exchangeRate;
 
-    Currency(String code, double exchangeRate){
+    public Currency(String code, double exchangeRate){
         this.code = code;
         this.exchangeRate = exchangeRate;
     }

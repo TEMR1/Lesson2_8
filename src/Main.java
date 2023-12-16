@@ -1,14 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        AccountCreateManager accountCreateManager = new AccountCreateManager();
+        RegularUser firstUser = RegularUser.getInstance();
+        PremiumUser secondUser = PremiumUser.getInstance();
 
-        User firstUser = accountCreateManager.createUser("Danylo","Shpak","danylo.shpak.2009@gmail.com");
-        User secondUser = accountCreateManager.createUser("Petro", "Koval", "petro.koval.2010@gmail.com");
+        firstUser.setParameters("Danylo","Shpak", "danylo.shpak.2009@gmail.com",5);
+        secondUser.setParameters("Petro", "Koval", "petro.koval.2010@gmail.com", 10, "PREMIUM");
 
-        Currency firstCurrency = accountCreateManager.createCurrency("UAH",2);
-        Currency secondCurrency = accountCreateManager.createCurrency("USD",5);
+        Currency firstCurrency  = new Currency("UAH", 2);
+        Currency secondCurrency = new Currency("USD", 5);
 
-        BankAccount firstAccount = new BankAccount(firstUser,firstCurrency,1000);
+        BankAccount firstAccount = new BankAccount(firstUser,firstCurrency,5000);
         BankAccount secondAccount = new BankAccount(secondUser,secondCurrency,10000);
 
         firstAccount.changeCreditLimit(1000);
